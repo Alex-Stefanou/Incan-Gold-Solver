@@ -16,5 +16,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+p {
+  margin-top: 5px;
+  line-height: 1.8em;
+}
 </style>

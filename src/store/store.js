@@ -5,17 +5,20 @@ Vue.use(Vuex)
 
 export const store = new Vuex.Store({
   state: {
-    appState: "home",
+    gameRound: 0, // 0 = homescreen, 6 = endscreen
+    numPlayers: 4,
+    playerNames: [],
+    deck: {artifacts: [], hazards: [], treasure: []}
   },
 
   mutations: {
     resetApp (state) {
-      state.appState = "home";
+      state.GameRound = 0;
       console.log("Application has been reset");
     },
   },
 
   getters: {
-    appState: state => state.appState,
+    gameRound: state => state.gameRound,
   },
 })
