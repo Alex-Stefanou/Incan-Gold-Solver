@@ -1,27 +1,45 @@
 <template>
   <div id="app">
-    <p>Hello World</p>
+    <button id="reset" class="button">Reset</button>
+    <h1>Incan Gold Solver</h1>
+
+    <Home></Home>
   </div>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
+import Home from './components/Home.vue'
 
 export default {
   name: 'App',
-  // components: {
-  //   HelloWorld
-  // }
+  components: {
+    Home
+  }
 }
 </script>
 
 <style>
+@import "https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css";
+
+html, body {
+  background-color: #262626;
+  color: #8cb3d9;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: 600;
+}
+
 #app {
+  margin: 12px;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+}
+
+#reset {
+  float: right;
 }
 </style>
