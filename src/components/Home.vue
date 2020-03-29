@@ -9,14 +9,33 @@
       </p>
     </div>
 
-    <div id="startForm">
+    <div id="startform">
       <div class="field">
           <label>Number of Players: {{ numPlayers }}</label>
           <div class="slidecontainer">
             <input v-model="numPlayers"
               type="range" class="slider"
-              min="2" max="8">
+              min=2 max=8>
           </div>
+        </div>
+
+        <div class="field">
+          <label>Artifact type:</label>
+          <div class="radiocontainer">
+            <input type="radio" class="radio" value=0 v-model="artifactType">
+            <label title="Original Diamant style; no artifacts in the game">No Artifacts</label>
+            
+            <input type="radio" class="radio" value=1 v-model="artifactType">
+            <label title="Classic Incan Gold; First three artifacts are worth 5, last two are worth 10">Fives and Tens</label>
+            
+            <input type="radio" class="radio" value=2 v-model="artifactType">
+            <label title="Modern Incan Gold; Artifacts have fixed values: 5/7/8/10/12">Unique Values</label>
+          </div>
+        </div>
+
+        <div>
+          <label>Custom Player Names: </label>
+          <input type="checkbox" v-model="customNames">
         </div>
     </div>
 
@@ -28,7 +47,10 @@ export default {
   name: 'Home',
   data() {
     return {
-      numPlayers: 4,
+      artifactType: 2,
+      customNames: false,
+      playerNames: ["You","","","","","","",""],
+      numPlayers: 4
     }
   }
 }
@@ -36,22 +58,23 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-div {
+/* div {
   margin-top: 10px;
-}
+} */
 
 p {
   line-height: 1.8em;
 }
 
-#startForm {
+#startform {
   margin: 1em 20vw 0em 20vw;
   padding: 0.5em;
   background-color: #424242;
   border: 6px solid rgb(15, 15, 15);
+  border-radius: 16px;;
 }
 
-.slidecontainer{
+.slidecontainer {
   margin: auto;
   width: 70%;
 }
@@ -84,5 +107,12 @@ p {
   border-radius: 50%;
   background: #161616;
   cursor: pointer;
+}
+
+.radiocontainer {
+  width: 100%;
+}
+.radio{
+  margin-left: 14px;
 }
 </style>
