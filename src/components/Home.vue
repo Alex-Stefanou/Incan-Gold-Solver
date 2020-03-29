@@ -34,8 +34,13 @@
         </div>
 
         <div>
-          <label>Custom Player Names: </label>
-          <input type="checkbox" v-model="customNames">
+          <label>Custom player names</label>
+          <input type="checkbox" class="checkbox" v-model="customNames">
+        </div>
+        <div v-if="customNames">
+          <ul v-for="(Name,i) in displayedNames" :key="i">
+            <li><input type="text" v-bind="playerNames[i]"></li>
+          </ul>
         </div>
     </div>
 
@@ -49,8 +54,25 @@ export default {
     return {
       artifactType: 2,
       customNames: false,
+      displayedNames: [],
       playerNames: ["You","","","","","","",""],
       numPlayers: 4
+    }
+  },
+  mounted() {
+    this.displayNames();
+  },
+  methods: {
+    displayNames() {
+      this.displayedNames = [];
+      for( var i=0; i<this.numPlayers; i++) {
+        this.displayedNames.push(this.playerNames[i]);
+      }
+    }
+  },
+  watch: {
+    numPlayers: function() {
+      this.displayNames();
     }
   }
 }
@@ -67,16 +89,21 @@ p {
 }
 
 #startform {
-  margin: 1em 20vw 0em 20vw;
+  margin: 1em 15vw 0em 15vw;
   padding: 0.5em;
   background-color: #424242;
   border: 6px solid rgb(15, 15, 15);
   border-radius: 16px;;
 }
 
+.checkbox {
+  vertical-align: middle;
+  margin-left: 8px;
+}
+
 .slidecontainer {
   margin: auto;
-  width: 70%;
+  width: 60%;
 }
 .slider {
   -webkit-appearance: none;
@@ -113,6 +140,7 @@ p {
   width: 100%;
 }
 .radio{
-  margin-left: 14px;
+  margin-left: 18px;
+  margin-right: 4px;
 }
 </style>
