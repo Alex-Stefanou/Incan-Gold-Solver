@@ -11,37 +11,37 @@
 
     <div id="startform">
       <div class="field">
-          <label>Number of Players: {{ numPlayers }}</label>
-          <div class="slidecontainer">
-            <input v-model="numPlayers"
-              type="range" class="slider"
-              min=2 max=8>
-          </div>
+        <label>Number of Players: {{ numPlayers }}</label>
+        <div class="slidecontainer">
+          <input v-model="numPlayers"
+            type="range" class="slider"
+            min=2 max=8>
         </div>
+      </div>
 
-        <div class="field">
-          <label>Artifact type:</label>
-          <div class="radiocontainer">
-            <input type="radio" class="radio" value=0 v-model="artifactType">
-            <label title="Original Diamant style; no artifacts in the game">No Artifacts</label>
-            
-            <input type="radio" class="radio" value=1 v-model="artifactType">
-            <label title="Classic Incan Gold; First three artifacts are worth 5, last two are worth 10">Fives and Tens</label>
-            
-            <input type="radio" class="radio" value=2 v-model="artifactType">
-            <label title="Modern Incan Gold; Artifacts have fixed values: 5/7/8/10/12">Unique Values</label>
-          </div>
+      <div class="field">
+        <label>Artifact type:</label>
+        <div class="radiocontainer">
+          <input type="radio" class="radio" value=0 v-model="artifactType">
+          <label title="Original Diamant style; no artifacts in the game">No Artifacts</label>
+          
+          <input type="radio" class="radio" value=1 v-model="artifactType">
+          <label title="Classic Incan Gold; First three artifacts are worth 5, last two are worth 10">Fives and Tens</label>
+          
+          <input type="radio" class="radio" value=2 v-model="artifactType">
+          <label title="Modern Incan Gold; Artifacts have fixed values: 5/7/8/10/12">Unique Values</label>
         </div>
+      </div>
 
-        <div>
-          <label>Custom player names</label>
-          <input type="checkbox" class="checkbox" v-model="customNames">
-        </div>
-        <div v-if="customNames">
-          <ul v-for="(Name,i) in displayedNames" :key="i">
-            <li><input type="text" v-bind="playerNames[i]"></li>
-          </ul>
-        </div>
+      <div>
+        <label>Custom player names</label>
+        <input type="checkbox" class="checkbox" v-model="customNames">
+      </div>
+      <div v-if="customNames">
+        <ul v-for="(Name,i) in displayedNames" :key="i">
+          <li><input type="text" v-bind="playerNames[i]"></li>
+        </ul>
+      </div>
     </div>
 
   </div>
@@ -89,7 +89,7 @@ p {
 }
 
 #startform {
-  margin: 1em 15vw 0em 15vw;
+  margin: 1em 17vw 0em 17vw;
   padding: 0.5em;
   background-color: #424242;
   border: 6px solid rgb(15, 15, 15);
