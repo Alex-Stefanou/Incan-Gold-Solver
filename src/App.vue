@@ -36,11 +36,12 @@ export default {
 @import "https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css";
 
 html, body {
-  background-color: #262626;
+  background-color: #262626; /*Replace with my mexico pics*/
   color: #8cb3d9;
 }
 
 h1 {
+  padding-left: 2.2em;
   font-size: 2em;
   font-weight: 600;
 }
