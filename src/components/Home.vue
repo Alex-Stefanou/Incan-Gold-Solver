@@ -10,7 +10,7 @@
     </div>
 
     <div id="startform">
-      <button class="button">Start Game</button>
+      <button @click="startGame()" class="button">Start Game</button>
 
       <div class="field">
         <label>Number of Players: {{ numPlayers }}</label>
@@ -70,6 +70,9 @@ export default {
       for( var i=0; i<this.numPlayers; i++) {
         this.displayedNames.push(this.playerNames[i]);
       }
+    },
+    startGame() {
+      this.$store.commit("nextRound");
     }
   },
   watch: {

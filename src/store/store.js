@@ -13,9 +13,13 @@ export const store = new Vuex.Store({
 
   mutations: {
     resetApp (state) {
-      state.GameRound = 0;
+      state.gameRound = 0;
       console.log("Application has been reset");
     },
+    nextRound (state) {
+      state.gameRound++;
+      console.log("incrementing round");
+    }
   },
 
   getters: {

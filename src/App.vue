@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <button id="reset" class="button">Reset</button>
+    <button @click="reset()" id="reset" class="button">Reset</button>
     <h1>Incan Gold Solver</h1>
 
     <Home v-if="inGame != true"></Home>
@@ -20,13 +20,18 @@ export default {
     GameSolver,
     Home
   },
-  compute: {
+  computed: {
     inGame: function() {
       if (this.$store.getters.gameRound === 0) {
         return false;
       } else {
         return true;
       }
+    }
+  },
+  methods: {
+    reset: function() {
+      this.$store.commit("resetApp")
     }
   }
 }
