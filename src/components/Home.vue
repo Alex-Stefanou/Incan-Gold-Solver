@@ -10,6 +10,8 @@
     </div>
 
     <div id="startform">
+      <button class="button">Start Game</button>
+
       <div class="field">
         <label>Number of Players: {{ numPlayers }}</label>
         <div class="slidecontainer">
@@ -33,7 +35,7 @@
         </div>
       </div>
 
-      <div>
+      <div class="field">
         <label>Custom player names</label>
         <input type="checkbox" class="checkbox" v-model="customNames">
       </div>
@@ -99,6 +101,10 @@ p {
 .checkbox {
   vertical-align: middle;
   margin-left: 8px;
+}
+
+.field {
+  margin-top: 16px;
 }
 
 .slidecontainer {
