@@ -41,7 +41,7 @@
       </div>
       <div v-if="customNames">
         <ul v-for="(Name,i) in displayedNames" :key="i">
-          <li><input type="text" v-bind="playerNames[i]"></li>
+          <li><input type="text" v-model="playerNames[i]"></li>
         </ul>
       </div>
     </div>
@@ -61,7 +61,10 @@ export default {
       numPlayers: 4
     }
   },
-  mounted() {
+  mounted() { //mount custom names
+    if (this.$store.getters.playerNames.length > 0) {
+      this.playerNames = this.$store.getters.playerNames;
+    }
     this.displayNames();
   },
   methods: {
@@ -73,6 +76,13 @@ export default {
     },
     startGame() {
       this.$store.commit("nextRound");
+      this.$store.commit("setNumPlayers", this.numPlayers);
+      this.$store.commit("setArtifactType", this.artifactType);
+      if(this.customNames === true) {
+        this.$store.commit("setNames", this.playerNames)
+      } else {
+        this.$store.commit("setDefaultNames");
+      }
     }
   },
   watch: {
