@@ -24,11 +24,11 @@ export const store = new Vuex.Store({
       function Treasure(value) {
         this.type = "treasure",
         this.value = value
-      };
+      }
       function Hazard(catagory) {
         this.type = "hazard",
         this.catagory = catagory
-      };
+      }
       state.deck = [
         new Treasure(17), new Treasure(15), new Treasure(14), new Treasure(13),
         new Treasure(11), new Treasure(11), new Treasure(9),  new Treasure(7),  new Treasure(7),  new Treasure(5),  new Treasure(5),
@@ -42,11 +42,6 @@ export const store = new Vuex.Store({
     },
     setArtifactType (state, artifactType) {
       state.artifactType = artifactType;
-    },
-    setDefaultNames (state) {
-      for (var player=0; player<state.numPlayers; player++) {
-        state.playerNames[player] = "Player "+(player+1);
-      }
     },
     setNames (state, Name) {
       let playerNumber = 0

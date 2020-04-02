@@ -4,8 +4,8 @@
     <div>
       <p>
         Welcome to the Incan Gold Solver which will help optimise your Incan Gold gameplay.<br>
-        Features include probability of round ending, expected gems from next card, and score tracking for other players!<br>
-        To get started select the number of players, and press start!
+        <!-- Features include probability of round ending, expected gems from next card, and score tracking for other players!<br> -->
+        To get started select the number of players, enter their names and press start!
       </p>
     </div>
 
@@ -78,11 +78,8 @@ export default {
       this.$store.commit("nextRound");
       this.$store.commit("setNumPlayers", this.numPlayers);
       this.$store.commit("setArtifactType", this.artifactType);
-      if(this.customNames === true) {
-        this.$store.commit("setNames", this.playerNames)
-      } else {
-        this.$store.commit("setDefaultNames");
-      }
+      this.$store.commit("setNames", this.playerNames);
+      this.$store.commit("resetDeck");
     }
   },
   watch: {
