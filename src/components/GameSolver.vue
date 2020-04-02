@@ -1,7 +1,22 @@
 <template>
   <div>
 
-    <p>Hello World</p>
+    <div class="columns">
+      <DrawCard></DrawCard>
+      <Path></Path>
+    </div>
+
+    <div class="columns">
+      <pDeath></pDeath>
+      <pTreasure></pTreasure>
+      <RemovedCards></RemovedCards>
+      <AddedCards></AddedCards>
+    </div>
+
+    <div class="columns">
+      <PlayerInfo></PlayerInfo>
+      <ScoreBoard></ScoreBoard>
+    </div>
 
   </div>
 </template>
