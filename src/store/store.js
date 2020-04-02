@@ -14,11 +14,9 @@ export const store = new Vuex.Store({
   mutations: {
     nextRound (state) {
       state.gameRound++;
-      console.log("incrementing round");
     },
     resetApp (state) {
       state.gameRound = 0;
-      console.log("Application has been reset");
     },
     resetDeck (state) {
       function Treasure(value) {

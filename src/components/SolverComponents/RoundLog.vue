@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: 'Path',
+  name: 'RoundLog',
   data() {
     return {
     }
