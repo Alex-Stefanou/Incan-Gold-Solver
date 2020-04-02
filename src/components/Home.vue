@@ -65,6 +65,7 @@ export default {
     if (this.$store.getters.playerNames.length > 0) {
       this.playerNames = this.$store.getters.playerNames;
     }
+    this.numPlayers = this.$store.getters.numPlayers;
     this.displayNames();
   },
   methods: {

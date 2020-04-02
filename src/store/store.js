@@ -61,7 +61,8 @@ export const store = new Vuex.Store({
   },
 
   getters: {
-    playerNames: state => state.playerNames,
     gameRound: state => state.gameRound,
+    playerNames: state => state.playerNames,
+    numPlayers: state => state.numPlayers
   },
 })
